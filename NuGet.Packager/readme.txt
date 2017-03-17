@@ -1,0 +1,1 @@
+﻿Details can be found here: https://github.com/rjamesnw/VersionUpdater

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>VersionUpdater</id>
+    <version>1.0.0</version>
+    <title>Visual Studio .Net Project Version Updater</title>
+    <authors>jamesnw</authors>
+    <owners>jamesnw</owners>
+    <description>
+      Updates Visual Studio .Net project versions on every build.
+      Normally an assembly version is in the format [major version].[minor version].[build number].[revision].
+      By default, this ends up being 1.0.0.0 for new projects, and does not auto update, resulting in the following static versions for many projects:
+      
+      [assembly: AssemblyVersion("1.0.0.0")]
+      [assembly: AssemblyFileVersion("1.0.0.0")]
+      
+      This assembly is loaded by a build task by placing a build task entry in the project settings file (usually .csproj or .xproj).
+      On every build, it increments the revision number, and on each new day, is increments the build number and resets the revision to 0.
+      The major and minor numbers are never touched. This process ensures that during routine debugging and testing one doesn't forget to update the version numbers, especially when working with clients during UAT or quick post go-live patch updates.
+    </description>
+    <releaseNotes>
+      First release on NuGet
+    </releaseNotes>
+    <summary>
+      Updates Visual Studio .Net project versions on every build.
+    </summary>
+    <language>en-US</language>
+    <projectUrl>https://github.com/rjamesnw/VersionUpdater</projectUrl>
+    <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://creativecommons.org/licenses/by-sa/4.0</licenseUrl>
+    <copyright>(C) 2017</copyright>
+    <dependencies>
+        <group targetFramework="net35">
+          <dependency id="Microsoft.Build.Framework" version="3.5.0" />
+        </group>
+    </dependencies>
+    <references></references>
+    <tags>versioning</tags>
+  </metadata>
+  <files>
+    <file src="readme.txt" target="" />
+    <file src="build\**" target="build" />
+    <file src="content\**" target="content" />
+  </files>
+</package>
