@@ -1,4 +1,4 @@
-# VersionUpdater
+## VersionUpdater
 
 The assembly produced by this project automatically updates Visual Studio .Net project versions on every build.
 Normally an assembly version is in the format `[major version].[minor version].[build number].[revision]`.
@@ -12,3 +12,28 @@ On every build, it increments the revision number, and on each new day, is incre
 
 The major and minor numbers are never touched. This process ensures that during routine debugging and testing one doesn't forget to update the version numbers, especially when working with clients during UAT or quick post go-live patch updates.
 
+#### Installation - .Net
+
+Put `VersionUpdater.dll` in the root of your PROJECT folder and add this to the end of your project settings file:
+
+    <UsingTask TaskName="VersionUpdater" AssemblyFile="VersionUpdater.dll" />
+    <Target Name="BeforeBuild">
+      <VersionUpdater />
+    </Target>
+
+#### Installation - .Net Core
+
+*(not, this is not working yet ;))*
+
+Put `VersionUpdater.Core.dll` in the root of your PROJECT folder and add this to the end of your project settings file:
+
+    <UsingTask TaskName="VersionUpdater" AssemblyFile="VersionUpdater.Core.dll" />
+    <Target Name="BeforeBuild">
+      <VersionUpdater />
+    </Target>
+
+#### Misc.
+
+*License: https://creativecommons.org/licenses/by-sa/4.0/*
+
+*No NuGet package is available yet.*
