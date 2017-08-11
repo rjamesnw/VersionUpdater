@@ -7,6 +7,8 @@ By default, this ends up being `1.0.0.0` for new projects, and does not auto upd
     [assembly: AssemblyVersion("1.0.0.0")]
     [assembly: AssemblyFileVersion("1.0.0.0")]
 
+You can use the "1.0.\*" format, but it will be based on number of dats since Jan 1, 2000, and personally I like to start at 0. ;) Then there's this issue: https://goo.gl/QuSdgv (among others)
+
 This assembly is loaded by a build task by placing a build task entry in the project settings file (usually `.csproj` or `.xproj`).
 On every build, it increments the revision number, and on each new day, is increments the build number and resets the revision to 0.
 
